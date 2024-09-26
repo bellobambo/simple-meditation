@@ -5,6 +5,7 @@ import beachImage from "@/assets/meditation-images/beach.webp";
 import { StatusBar } from "expo-status-bar";
 import CustomButton from "@/components/CustomButton";
 import { useRouter } from "expo-router";
+import AppGradient from "@/components/AppGradient";
 
 const App = () => {
   const router = useRouter();
@@ -16,11 +17,8 @@ const App = () => {
         resizeMode="cover"
         className="flex-1"
       >
-        <LinearGradient
-          className="flex-1"
-          colors={["rgba(0, 0, 0, 0.4)", "rgba(0, 0, 0, 0.8)"]}
-        >
-          <SafeAreaView className="flex-1 pz-1 justify-between mx-5 my-12">
+        <AppGradient colors={["rgba(0, 0, 0, 0.4)", "rgba(0, 0, 0, 0.8)"]}>
+          <SafeAreaView className="flex-1 pz-1 justify-between mx-5 my-1">
             <View>
               <Text className="text-center text-white font-bold text-4xl mt-10">
                 Simple Medication
@@ -32,12 +30,12 @@ const App = () => {
 
             <View>
               <CustomButton
-                onPress={() => router.push("/test")}
+                onPress={() => router.push("/nature-meditate")}
                 title="Get Started"
               />
             </View>
           </SafeAreaView>
-        </LinearGradient>
+        </AppGradient>
       </ImageBackground>
     </View>
   );
